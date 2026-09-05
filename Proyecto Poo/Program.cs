@@ -1,22 +1,33 @@
-﻿namespace Taller3
+﻿namespace Taller33
 {
     internal class Program
     {
         static void Main(string[] args)
         {
-            while (true)
-            {
-                Console.Write("Ingrese el tamaño del rombo (0 para salir): ");
-                int tamaño = int.Parse(Console.ReadLine());
+            Console.Write("Ingrese el valor de m: ");
+            int m = int.Parse(Console.ReadLine());
 
-                if (tamaño == 0)
-                    break;
+            Console.Write("Ingrese el valor de n: ");
+            int n = int.Parse(Console.ReadLine());
 
-                Rombo rombo = new Rombo(tamaño);
-                rombo.Imprimir();
+            Console.Write("Ingrese el valor de p: ");
+            int p = int.Parse(Console.ReadLine());
 
-                Console.WriteLine(); // Deja un espacio entre rombos
-            }
+            Matrices matrices = new Matrices(m, n, p);
+
+            matrices.LlenarA();
+            matrices.LlenarB();
+
+            Console.WriteLine();
+            matrices.MostrarA();
+
+            Console.WriteLine();
+            matrices.MostrarB();
+
+            matrices.Multiplicar();
+
+            Console.WriteLine();
+            matrices.MostrarC();
         }
     }
 }
